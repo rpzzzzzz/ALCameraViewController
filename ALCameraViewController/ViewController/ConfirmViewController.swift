@@ -209,19 +209,19 @@ public class ConfirmViewController: UIViewController, UIScrollViewDelegate {
     internal func confirmPhoto() {
         
         disable()
-        
-        imageView.isHidden = true
-        
-        let spinner = showSpinner()
+//We want imageView to show image before crop
+//        imageView.isHidden = true
+// dont show spiner because it will cause scroll view problem
+//        let spinner = showSpinner()
 
         var fetcher = SingleImageFetcher()
             .onSuccess { image in
                 self.onComplete?(image, self.asset)
-                self.hideSpinner(spinner)
+//                self.hideSpinner(spinner)
                 self.enable()
            }
             .onFailure { error in            
-                self.hideSpinner(spinner)
+//                self.hideSpinner(spinner)
                 self.showNoImageScreen(error)
             }
             .setAsset(asset)
