@@ -105,9 +105,9 @@ internal class CropOverlay: UIView {
             let vLine = verticalLines[i]
             
             let spacing = (padding * CGFloat(i + 1)) + (lineThickness * CGFloat(i))
-            
+            let vLineX = (bounds.width / 3.0) * CGFloat(i + 1)
             hLine.frame = CGRect(x: 0, y: spacing, width: bounds.width, height:  lineThickness)
-            vLine.frame = CGRect(x: spacing, y: 0, width: lineThickness, height: bounds.height)
+            vLine.frame = CGRect(x: vLineX, y: 0, width: lineThickness, height: bounds.height)
         }
         
     }
