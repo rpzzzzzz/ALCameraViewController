@@ -77,16 +77,10 @@ public class SingleImageFetcher {
             options.normalizedCropRect = cropRect
             options.resizeMode = .exact
             
-            let targetWidth = floor(CGFloat(asset.pixelWidth) * cropRect.width)
-<<<<<<< HEAD
-            let targetHeight = floor(CGFloat(asset.pixelHeight) * cropRect.height)
-//            let dimension = max(min(targetHeight, targetWidth), 1024 * scale)
-            targetSize = CGSize(width: targetWidth, height: targetHeight)
-=======
-			let targetHeight = floor(CGFloat(asset.pixelHeight) * cropRect.height)
-			
-			targetSize = CGSize(width: targetWidth, height: targetHeight)
->>>>>>> a2b94fb789a17233d2593613782f7d918f025d61
+          let targetWidth = floor(CGFloat(asset.pixelWidth) * cropRect.width)
+          let targetHeight = floor(CGFloat(asset.pixelHeight) * cropRect.height)
+
+          targetSize = CGSize(width: targetWidth, height: targetHeight)
         }
 		
         PHImageManager.default().requestImage(for: asset, targetSize: targetSize, contentMode: .aspectFill, options: options) { image, _ in

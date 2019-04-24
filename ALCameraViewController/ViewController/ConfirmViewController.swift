@@ -223,19 +223,19 @@ public class ConfirmViewController: UIViewController, UIScrollViewDelegate {
 		
 		disable()
 		
-		imageView.isHidden = true
-		
-		let spinner = showSpinner()
-		
+//    imageView.isHidden = true
+
+//    let spinner = showSpinner()
+
 		if let asset = asset {
 			var fetcher = SingleImageFetcher()
 				.onSuccess { [weak self] image in
 					self?.onComplete?(image, self?.asset)
-					self?.hideSpinner(spinner)
+//          self?.hideSpinner(spinner)
 					self?.enable()
 				}
 				.onFailure { [weak self] error in
-					self?.hideSpinner(spinner)
+//          self?.hideSpinner(spinner)
 					self?.showNoImageScreen(error)
 				}
 				.setAsset(asset)
@@ -258,7 +258,7 @@ public class ConfirmViewController: UIViewController, UIScrollViewDelegate {
 			}
 			
 			onComplete?(newImage, nil)
-			hideSpinner(spinner)
+//      hideSpinner(spinner)
 			enable()
 		}
 	}
